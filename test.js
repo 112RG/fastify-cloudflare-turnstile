@@ -79,6 +79,7 @@ tap.test('Plugin should pass when captcha is valid', async (t) => {
     }
   })
   t.equal(response.statusCode, 200)
+  t.equal(response.body, 'hello')
 })
 tap.test('Plugin should throw an error captcha is invalid', async (t) => {
   const fastify = Fastify()
@@ -102,4 +103,5 @@ tap.test('Plugin should throw an error captcha is invalid', async (t) => {
     }
   })
   t.equal(response.statusCode, 400)
+  t.equal(response.body, JSON.stringify({ statusCode: 400, error: 'Bad Request', message: 'Invalid Captcha' }))
 })
