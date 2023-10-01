@@ -1,0 +1,21 @@
+{
+    "name": "fastify-cf-turnstile",
+    "version": "1.0.0",
+    "description": "A Fastify plugin for CloudFlare Turnstile Captcha",
+    "keywords": ["fastify", "turnstile", "CloudFlare", "captcha"],
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/112RG/fastify-cf-turnstile.git"
+    },
+    "author": "112RG",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/112RG/fastify-cf-turnstile/issues"
+    },
+    "homepage": "https://github.com/112RG/fastify-cf-turnstile#readme",
+    "dependencies": {
+      "fastify-plugin": "^4.5.1"
+    }
+  }
+  
