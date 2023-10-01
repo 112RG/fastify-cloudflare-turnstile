@@ -11,11 +11,26 @@ jobs:
     name: Node.js ${{ matrix.node }}
     steps:
     - uses: actions/checkout@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
+    
     - name: Install
       run: npm install
 
     - name: Run tests
       run: npm run test
+  
+  automerge:
+    name: Automerge Dependabot PRs
+    if: >
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.user.login == 'dependabot[bot]'
+    needs: test
+    permissions:
+      pull-requests: write
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3
+        with:
+          exclude: ${{ inputs.auto-merge-exclude }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          target: major
