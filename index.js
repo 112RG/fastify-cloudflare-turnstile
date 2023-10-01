@@ -20,28 +20,27 @@ async function fastifyCloudFlareTurnstile (fastify, options, done) {
     await verify(req, token, options.privatekey, next)
   }
 
-  async function verify (req, token, privatekey, next) {
-    const ip = req.headers['cf-connecting-ip']
-
-    const formData = new FormData()
-    formData.append('secret', privatekey)
-    formData.append('response', token)
-    formData.append('remoteip', ip)
-
-    const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
-    const result = await fetch(url, {
-      body: formData,
-      method: 'POST'
-    })
-    const outcome = await result.json()
-    if (!outcome.success) {
-      const err = new Error('Invalid Captcha')
-      err.status = 400
-      throw err
-    }
-    return next()
-  }
   done()
 }
+async function verify (req, token, privatekey, next) {
+  const ip = req.headers['cf-connecting-ip']
 
-module.exports = fastifyPlugin(fastifyCloudFlareTurnstile)
+  const formData = new FormData()
+  formData.append('secret', privatekey)
+  formData.append('response', token)
+  formData.append('remoteip', ip)
+
+  const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+  const result = await fetch(url, {
+    body: formData,
+    method: 'POST'
+  })
+  const outcome = await result.json()
+  if (!outcome.success) {
+    const err = new Error('Invalid Captcha')
+    err.status = 400
+    throw err
+  }
+  return next()
+}
+module.exports = fastifyPlugin(fastifyCloudFlareTurnstile,  { name: "fastify-cf-turnstile" })
