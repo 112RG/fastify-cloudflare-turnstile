@@ -1,6 +1,6 @@
 const fastifyPlugin = require('fastify-plugin')
 
-async function fastifyCloudFlareTurnstile (fastify, options, done) {
+function fastifyCloudFlareTurnstile (fastify, options, done) {
   if (!Object.prototype.hasOwnProperty.call(options, 'sitekey')) {
     throw new Error('sitekey must be set as a string in the options object.')
   }
@@ -15,14 +15,14 @@ async function fastifyCloudFlareTurnstile (fastify, options, done) {
   }
   fastify.decorate('cfTurnstile', cfTurnstile)
 
-  async function cfTurnstile (req, reply, next) {
+  async function cfTurnstile (req, reply) {
     const token = req.body['cf-turnstile-response']?.value || req.body['cf-turnstile-response']
-    await verify(req, token, options.privatekey, next)
+    return await verify(req, token, options.privatekey)
   }
 
   done()
 }
-async function verify (req, token, privatekey, next) {
+async function verify (req, token, privatekey) {
   const ip = req.headers['cf-connecting-ip']
 
   const formData = new FormData()
@@ -41,6 +41,5 @@ async function verify (req, token, privatekey, next) {
     err.status = 400
     throw err
   }
-  return next()
 }
 module.exports = fastifyPlugin(fastifyCloudFlareTurnstile, { name: 'fastify-cf-turnstile' })
