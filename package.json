@@ -20,7 +20,7 @@
         "type": "git",
         "url": "git+https://github.com/112RG/fastify-cf-turnstile.git"
     },
-    "author": "112RG",
+    "author": "Rylee George <112RG>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/112RG/fastify-cf-turnstile/issues"
