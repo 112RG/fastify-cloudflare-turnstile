@@ -15,13 +15,13 @@ async function fastifyCloudFlareTurnstile (fastify, options) {
   }
   fastify.decorate('cfTurnstile', cfTurnstile)
 
-  async function cfTurnstile (req, reply) {
+  async function cfTurnstile (req) {
     const token = req.body['cf-turnstile-response']?.value || req.body['cf-turnstile-response']
     await verify(req, token, options.privatekey)
   }
 }
 
-async function verify (req, token, privatekey, next) {
+async function verify (req, token, privatekey) {
   const ip = req.headers['cf-connecting-ip']
 
   const formData = new FormData()
