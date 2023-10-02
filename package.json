@@ -9,8 +9,12 @@
         "captcha"
     ],
     "main": "index.js",
+    "types": "types/index.d.ts",
     "scripts": {
-        "test": "standard | snazzy && tap test.js"
+        "lint": "standard | snazzy",
+        "test": "npm run test:unit && npm run test:types",
+        "test:unit": "tap",
+        "test:types": "tsd"
     },
     "repository": {
         "type": "git",
@@ -23,12 +27,18 @@
     },
     "homepage": "https://github.com/112RG/fastify-cf-turnstile#readme",
     "devDependencies": {
+        "@fastify/pre-commit": "^2.0.2",
         "fastify": "^4.23.2",
         "snazzy": "^9.0.0",
         "standard": "^17.1.0",
-        "tap": "^18.4.0"
+        "tap": "^16.3.9",
+        "tsd": "^0.29.0"
     },
     "dependencies": {
         "fastify-plugin": "^4.5.1"
-    }
+    },
+    "pre-commit": [
+        "lint",
+        "test"
+    ]
 }

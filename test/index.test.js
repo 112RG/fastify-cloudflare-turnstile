@@ -1,7 +1,7 @@
 const tap = require('tap')
 
 const Fastify = require('fastify')
-const fastifyCloudFlareTurnstile = require('./index')
+const fastifyCloudFlareTurnstile = require('..')
 
 tap.test('Plugin should register successfully', async (t) => {
   const fastify = Fastify()
