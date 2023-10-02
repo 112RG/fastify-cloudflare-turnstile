@@ -35,7 +35,8 @@
         "tsd": "^0.29.0"
     },
     "dependencies": {
-        "fastify-plugin": "^4.5.1"
+        "fastify-plugin": "^4.5.1",
+        "undici": "^5.25.3"
     },
     "pre-commit": [
         "lint",
