@@ -16,6 +16,9 @@
         "test:unit": "tap",
         "test:types": "tsd"
     },
+    "engines": {
+        "node": ">=16"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/112RG/fastify-cf-turnstile.git"
