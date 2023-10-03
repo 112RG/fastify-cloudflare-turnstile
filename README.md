@@ -1,6 +1,6 @@
 # fastify-cloudflare-turnstile
 ![CI](https://github.com/112RG/fastify-cloudflare-turnstile/workflows/CI/badge.svg)
-[![NPM version](https://img.shields.io/npm/v/112RG/fastify-cloudflare-turnstile.svg?style=flat)](https://www.npmjs.com/package/112RG/fastify-cloudflare-turnstile)
+[![NPM version](https://img.shields.io/npm/v/fastify-cloudflare-turnstile.svg?style=flat)](https://www.npmjs.com/package/112RG/fastify-cloudflare-turnstile)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://standardjs.com/)
 
 A [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) plugin for fastify.
@@ -9,7 +9,9 @@ This plugin does the [Server-side Validation](https://developers.cloudflare.com/
 
 ## Install
 
+```
 npm i fastify-cloudflare-turnstile
+```
 
 ## Usage
 
