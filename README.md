@@ -5,7 +5,7 @@
 
 A [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) plugin for fastify.
 
-This plugin does the [Server-side Validation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/) for cloudflare turnstile and it is upto you to implement [Client-side Validation](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/)
+This plugin does the [Server-side Validation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/) for Cloudflare Turnstile and it is upto you to implement [Client-side Validation](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/)
 
 ## Install
 
