@@ -1,6 +1,6 @@
 {
     "name": "fastify-cloudflare-turnstile",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A Fastify plugin for CloudFlare Turnstile Captcha",
     "keywords": [
         "fastify",
