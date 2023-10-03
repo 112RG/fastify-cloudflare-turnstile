@@ -1,5 +1,5 @@
 {
-    "name": "fastify-cf-turnstile",
+    "name": "fastify-cloudflare-turnstile",
     "version": "1.0.0",
     "description": "A Fastify plugin for CloudFlare Turnstile Captcha",
     "keywords": [
@@ -21,14 +21,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/112RG/fastify-cf-turnstile.git"
+        "url": "git+https://github.com/112RG/fastify-cloudflare-turnstile.git"
     },
     "author": "Rylee George <112RG>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/112RG/fastify-cf-turnstile/issues"
+        "url": "https://github.com/112RG/fastify-cloudflare-turnstile/issues"
     },
-    "homepage": "https://github.com/112RG/fastify-cf-turnstile#readme",
+    "homepage": "https://github.com/112RG/fastify-cloudflare-turnstile#readme",
     "devDependencies": {
         "@fastify/pre-commit": "^2.0.2",
         "fastify": "^4.23.2",
