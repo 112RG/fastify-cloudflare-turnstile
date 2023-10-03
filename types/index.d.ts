@@ -5,7 +5,7 @@ import {
   type fastifyCloudFlareTurnstile = FastifyPluginAsync<fastifyCloudFlareTurnstile.fastifyCloudFlareTurnstileOptions>;
   
   /**
-   * Namespace for fastify-cf-turnstyle plugin.
+   * Namespace for fastify-cf-turnstile plugin.
    *
    * @namespace fastifyCloudFlareTurnstile
    */
@@ -16,7 +16,7 @@ import {
         privatekey: string;
     }
 
-    export const fastifyCfTurnstile: fastifyCloudFlareTurnstile
+    export const fastifyCloudFlareTurnstile: fastifyCloudFlareTurnstile
     export { fastifyCloudFlareTurnstile as default }
   }
   

@@ -47,4 +47,4 @@ async function verify (req, token, privatekey) {
 }
 module.exports = fastifyPlugin(fastifyCloudFlareTurnstile, { name: 'fastify-cloudflare-turnstile' })
 module.exports.default = fastifyCloudFlareTurnstile
-module.exports.fastifyCfTurnstile = fastifyCloudFlareTurnstile
+module.exports.fastifyCloudFlareTurnstile = fastifyCloudFlareTurnstile

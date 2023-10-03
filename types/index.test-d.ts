@@ -1,38 +1,38 @@
 import fastify from 'fastify'
-import fastifyCloudFlareTurnstyle from '..'
+import fastifyCloudFlareTurnstile from '..'
 import { expectAssignable, expectError, expectType } from 'tsd';
 
 const server = fastify()
 
-expectError(server.register(fastifyCloudFlareTurnstyle, {}));
-expectError(server.register(fastifyCloudFlareTurnstyle, { sitekey: 'test' }));
-expectError(server.register(fastifyCloudFlareTurnstyle, { privatekey: 'test' }));
+expectError(server.register(fastifyCloudFlareTurnstile, {}));
+expectError(server.register(fastifyCloudFlareTurnstile, { sitekey: 'test' }));
+expectError(server.register(fastifyCloudFlareTurnstile, { privatekey: 'test' }));
 
-server.register(fastifyCloudFlareTurnstyle, {
+server.register(fastifyCloudFlareTurnstile, {
   privatekey: 'test',
   sitekey: 'test',
 });
 
 expectError(
-  server.register(fastifyCloudFlareTurnstyle, {
+  server.register(fastifyCloudFlareTurnstile, {
     privatekey: 'test',
     sitekey: 1,
   })
 );
 
 expectError(
-  server.register(fastifyCloudFlareTurnstyle, {
+  server.register(fastifyCloudFlareTurnstile, {
     privatekey: 1,
     sitekey: 'test',
   })
 );
 
 expectError(
-  server.register(fastifyCloudFlareTurnstyle, {
+  server.register(fastifyCloudFlareTurnstile, {
     privatekey: 1,
     sitekey: 1,
   })
 );
 
-expectType<fastifyCloudFlareTurnstyle>(fastifyCloudFlareTurnstyle.fastifyCfTurnstile);
-expectAssignable<fastifyCloudFlareTurnstyle>(fastifyCloudFlareTurnstyle.default);
+expectType<typeof fastifyCloudFlareTurnstile>(fastifyCloudFlareTurnstile);
+expectAssignable<typeof fastifyCloudFlareTurnstile>(fastifyCloudFlareTurnstile);
