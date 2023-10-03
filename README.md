@@ -5,11 +5,19 @@
 A [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) plugin for fastify.
 
 This plugin does the [Server-side Validation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/) for cloudflare turnstile and it is upto you to implement [Client-side Validation](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/)
-## Example
+
+## Install
+
+npm i fastify-cloudflare-turnstile
+
+## Usage
 
 ```javascript
-const cfTurnstile = require('fastify-cf-turnstile')
-fastify.register(cfTurnstile,{
+const fastify = require('fastify');
+const cfTurnstile = require('fastify-cloudflare-turnstile')
+
+const app = fastify();
+app.register(cfTurnstile,{
     sitekey:"your_sitekey",
     privatekey:"your_privatekey",
 })
