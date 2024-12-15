@@ -1,7 +1,5 @@
 'use strict'
 
-const { FormData, fetch } = require('undici')
-
 const fastifyPlugin = require('fastify-plugin')
 
 async function fastifyCloudFlareTurnstile (fastify, options) {
